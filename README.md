@@ -4,12 +4,13 @@
 [![rank](https://make.fun/badge/news-image-20261119/rezimtirani/news-image-20261119-entry/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/rezimtirani/news-image-20261119-entry/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 
-One image that sums up the world's news of Thursday 19 November 2026:
-the first Trump–Xi–Putin trilateral summit in China, Ukraine's third
-strike on the Kerch Bridge in a week, Hakeem Jeffries' nomination as the
-first Black Speaker-in-waiting, Anthropic's record $81bn IPO, Israeli
-tanks crossing the Gaza ceasefire line — plus Voyager 1, GTA VI, Cyclone
-Akvan, a record Van Gogh sale and the EU's €45bn Ukraine loan.
+A single front page for Thursday 19 November 2026. The lead story is
+the first Trump–Xi–Putin trilateral in China; around it, the Kerch
+Bridge struck for the third time in a week, Hakeem Jeffries nominated
+to become the first Black Speaker, Anthropic's record $81bn IPO,
+Israeli tanks crossing the Gaza ceasefire line, and four more headlines
+— Voyager 1, GTA VI, Cyclone Akvan and a record Van Gogh — with the
+EU's €45bn Ukraine loan along the bottom.
 
 ## Run it
 
@@ -17,18 +18,19 @@ Akvan, a record Van Gogh sale and the EU's €45bn Ukraine loan.
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-`main.py` (Python 3 standard library only) copies the bundled `entry.png`
-to `$MAKEFUN_OUTPUT_DIR/entry.png` and verifies it: a whole PNG, at most
-1024 by 1024 pixels and at most 1 MiB. It needs no network, so two runs
-write identical bytes.
+That copies the bundled `entry.png` to `$MAKEFUN_OUTPUT_DIR/entry.png`
+after checking it is a whole PNG no larger than 1024 by 1024 pixels
+and 1 MiB. `main.py` uses only the Python standard library, needs no
+network, and writes identical bytes on every run.
 
-`render.py` draws `entry.png` from `news.json` (the day's stories, researched
-from Reuters, AP, BBC and Al Jazeera reporting of 19 November 2026) with
-Pillow and the DejaVu fonts:
+To redraw the image from its data, run the Pillow renderer:
 
 ```sh
 python3 render.py
 ```
+
+It reads `news.json` — the day's stories as reported on 19 November
+2026 by Reuters, AP, BBC and Al Jazeera — and draws `entry.png`.
 
 ---
 
